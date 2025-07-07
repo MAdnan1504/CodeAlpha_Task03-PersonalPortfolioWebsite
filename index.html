@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Link to Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <!-- Header Section: Contains navigation and site title -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">Muhammad Adnan</a> <!-- Your Name / Logo -->
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Mobile menu toggle button (hamburger icon) -->
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section: Main introduction -->
+    <section id="home" class="hero">
+        <img src="/dp screen shot.jfif" alt="Your Profile Photo" class="profile-img">
+        <h1>Hi, I'm Muhammad Adnan</h1>
+        <p>A passionate Frontened Web Developer with a knack for HTML,CSS and JavaScript.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <!-- About Section: Detailed biography -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>Hello! I'm Muhammad Adnan, and I specialize in Frontened Web Development. I love to build things that
+                    are both functional and aesthetically pleasing.</p>
+                <p>My journey into Web Development started when I tinkered
+                    with my first HTML website.
+                    I'm constantly learning new technologies and improving my craft.</p>
+                <p>In my free time, you can find me exploring new coding
+                    challenge and reading about design trends. I believe in continuous growth and
+                    embracing new challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section:  -->
+    <section id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <!-- Skill Item 1 -->
+                <div class="skill-item">
+                    <h3>HTML5 & CSS3</h3>
+                    <p>Proficient in creating semantic and responsive web layouts.</p>
+                </div>
+                <!-- Skill Item 2 -->
+                <div class="skill-item">
+                    <h3>JavaScript</h3>
+                    <p>Building interactive and dynamic web experiences.</p>
+                </div>
+                <!-- Skill Item 3 -->
+                <div class="skill-item">
+                    <h3>SQL</h3>
+                    <p>Analysing data in Database system and using different Sql quereis to extract data .</p>
+                </div>
+                <!-- Skill Item 4 -->
+                <div class="skill-item">
+                    <h3>Graphic Designing</h3>
+                    <p>Creating eye catching and interactive designs.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section:  -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+            
+                    <div class="project-content">
+                        <h3>Responsive Calculator</h3>
+                        <p>This is a simple yet powerful calculator built with pure HTML, CSS, and JavaScript. It
+                            performs basic arithmetic operations and includes full keyboard support for enhanced user
+                            experience. The design is fully responsive, making it accessible on mobile, tablet, and
+                            desktop devices.</p>
+                        <div class="project-links">
+                            <a href="https://madnan1504.github.io/CodeAlpha_Task02-Calculator/" target="_blank">Live
+                                Demo</a>
+                            <a href="https://github.com/MAdnan1504" target="_blank">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                   
+                    <div class="project-content">
+                        <h3>Responsive Product Gallery Website</h3>
+                        <p>
+                            I'm excited to share my latest project developed as part of the Frontend Web Development
+                            Internship at Code Alpha! This fully responsive Product Gallery Website is designed to work
+                            seamlessly across all screen sizes — including mobile, tablet, and desktop.
+
+                        </p>
+                        <div class="project-links">
+                            <a href="https://madnan1504.github.io/CodeAlpha_Task01-ImageGallery/" target="_blank">Live
+                                Demo</a>
+                            <a href="https://github.com/MAdnan1504" target="_blank">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section:  -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p>Have a question or want to work together? Feel free to send me a message!</p>
+                <form class="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+
+                    <input type="submit" value="Send Message">
+                </form>
+                <div class="social-links">
+                    <!--  social media links -->
+                    <a href="https://www.linkedin.com/in/muhammad-adnan-815a20341/" target="_blank"
+                        aria-label="LinkedIn">
+                        <!-- LinkedIn  Icon -->
+                        <i class="fa-brands fa-linkedin"></i>
+
+                        <a href="https://github.com/MAdnan1504" target="_blank" aria-label="GitHub">
+                            <!-- GitHub  Icon -->
+                            <i class="fa-brands fa-square-github"></i>
+                            
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section: Copyright and basic info -->
+    <footer>
+        <p>&copy; 2025 Muhammad Adnan. @All rights reserved.</p>
+        <p>Built with ❤️ and code.</p>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

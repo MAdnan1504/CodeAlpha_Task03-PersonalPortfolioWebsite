@@ -16,3 +16,6 @@ It highlights my projects, skills, and journey as a web developer. The website i
 - **HTML5** – Structure
 - **CSS3** – Styling & Responsive Layout
 - **JavaScript (Vanilla)** – Interactivity & DOM manipulation
+
+
+

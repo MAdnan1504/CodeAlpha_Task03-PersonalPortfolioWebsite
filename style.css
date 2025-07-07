@@ -1,0 +1,511 @@
+     /*
+        * CSS Reset and Basic Styles
+        * This section sets up a clean slate for styling and defines common properties.
+        */
+     :root {
+         --primary-bg: #f4f4f4;
+         --secondary-bg: #ffffff;
+         --text-color: #333333;
+         --heading-color: #2c3e50;
+         --accent-color: #3498db;
+         --border-color: #cccccc;
+         --shadow-light: rgba(0, 0, 0, 0.05);
+     }
+
+     * {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+     }
+
+     body {
+         font-family: 'Inter', sans-serif;
+         line-height: 1.6;
+         color: var(--text-color);
+         background-color: var(--primary-bg);
+         scroll-behavior: smooth;
+     }
+
+     .container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 20px;
+     }
+
+     /*
+        * Header & Navigation Styling
+        * Styles for the top navigation bar.
+        */
+     header {
+         background-color: var(--secondary-bg);
+         box-shadow: 0 2px 4px var(--shadow-light);
+         position: sticky;
+         top: 0;
+         z-index: 1000;
+         border-bottom-left-radius: 8px;
+         border-bottom-right-radius: 8px;
+     }
+
+     nav {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 15px 20px;
+     }
+
+     .logo {
+         font-weight: 700;
+         font-size: 1.8em;
+         color: var(--heading-color);
+         text-decoration: none;
+     }
+
+     .nav-links {
+         list-style: none;
+         display: flex;
+     }
+
+     .nav-links li {
+         margin-left: 30px;
+     }
+
+     .nav-links a {
+         text-decoration: none;
+         color: var(--text-color);
+         font-weight: 500;
+         padding: 5px 0;
+         position: relative;
+     }
+
+     .nav-links a::after {
+         content: '';
+         position: absolute;
+         left: 0;
+         bottom: -3px;
+         width: 0;
+         height: 2px;
+         background-color: var(--accent-color);
+         transition: width 0.3s ease;
+     }
+
+     .nav-links a:hover::after,
+     .nav-links a.active::after {
+         width: 100%;
+     }
+
+     .menu-toggle {
+         display: none;
+         flex-direction: column;
+         cursor: pointer;
+         padding: 10px;
+         border-radius: 5px;
+     }
+
+     .menu-toggle .bar {
+         height: 3px;
+         width: 25px;
+         background-color: var(--heading-color);
+         margin: 4px 0;
+         transition: 0.4s;
+         border-radius: 2px;
+     }
+
+     /* Styles for when the menu is active */
+     .menu-toggle.active .bar:nth-child(1) {
+         transform: translateY(7px) rotate(45deg);
+     }
+
+     .menu-toggle.active .bar:nth-child(2) {
+         opacity: 0;
+     }
+
+     .menu-toggle.active .bar:nth-child(3) {
+         transform: translateY(-7px) rotate(-45deg);
+     }
+
+     /*
+        * Hero Section Styling
+        * The main introductory section.
+        */
+     .hero {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         padding: 80px 20px;
+         background-color: var(--primary-bg);
+         min-height: calc(100vh - 80px);
+         justify-content: center;
+     }
+
+     .hero h1 {
+         font-size: 3.5em;
+         color: var(--heading-color);
+         margin-bottom: 10px;
+         font-weight: 700;
+     }
+
+     .hero p {
+         font-size: 1.2em;
+         color: var(--text-color);
+         margin-bottom: 30px;
+         max-width: 600px;
+     }
+
+     .profile-img {
+         width: 180px;
+         height: 180px;
+         border-radius: 50%;
+         object-fit: cover;
+         border: 4px solid var(--accent-color);
+         box-shadow: 0 4px 15px var(--shadow-light);
+         margin-bottom: 30px;
+     }
+
+     .btn {
+         display: inline-block;
+         background-color: var(--accent-color);
+         color: var(--secondary-bg);
+         padding: 12px 25px;
+         border-radius: 5px;
+         text-decoration: none;
+         font-weight: 600;
+         transition: background-color 0.3s ease, transform 0.2s ease;
+     }
+
+     .btn:hover {
+         background-color: #2980b9;
+         transform: translateY(-3px);
+     }
+
+     /*
+        * Section Styling (General)
+        * Styles applied to all main content sections.
+        */
+     section {
+         padding: 80px 20px;
+         background-color: var(--secondary-bg);
+         margin-bottom: 20px;
+         border-radius: 8px;
+         box-shadow: 0 2px 8px var(--shadow-light);
+         opacity: 0;
+         transform: translateY(20px);
+         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+     }
+
+     section.visible {
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     section:nth-of-type(even) {
+         background-color: var(--primary-bg);
+     }
+
+     h2 {
+         font-size: 2.5em;
+         color: var(--heading-color);
+         text-align: center;
+         margin-bottom: 40px;
+         position: relative;
+         padding-bottom: 10px;
+     }
+
+     h2::after {
+         content: '';
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         bottom: 0;
+         width: 80px;
+         height: 3px;
+         background-color: var(--accent-color);
+         border-radius: 2px;
+     }
+
+     /*
+        * About Section Specific Styles
+        */
+     .about-content {
+         display: flex;
+         flex-direction: column;
+         gap: 30px;
+         align-items: center;
+         max-width: 800px;
+         margin: 0 auto;
+         text-align: center;
+     }
+
+     .about-content p {
+         font-size: 1.1em;
+         color: var(--text-color);
+     }
+
+     /*
+        * Skills Section Specific Styles
+        */
+     .skills-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+         gap: 20px;
+         max-width: 900px;
+         margin: 0 auto;
+     }
+
+     .skill-item {
+         background-color: var(--secondary-bg);
+         padding: 20px;
+         border-radius: 8px;
+         text-align: center;
+         box-shadow: 0 2px 5px var(--shadow-light);
+         transition: transform 0.2s ease, box-shadow 0.2s ease;
+         border: 1px solid var(--border-color);
+     }
+
+     .skill-item:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     }
+
+     .skill-item h3 {
+         font-size: 1.2em;
+         color: var(--heading-color);
+         margin-bottom: 10px;
+     }
+
+     .skill-item p {
+         font-size: 0.9em;
+         color: var(--text-color);
+     }
+
+     /*
+        * Projects Section Specific Styles
+        */
+     .projects-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         gap: 30px;
+         max-width: 1000px;
+         margin: 0 auto;
+     }
+
+     .project-card {
+         background-color: var(--secondary-bg);
+         border-radius: 8px;
+         box-shadow: 0 4px 10px var(--shadow-light);
+         overflow: hidden;
+         transition: transform 0.2s ease, box-shadow 0.2s ease;
+         border: 1px solid var(--border-color);
+     }
+
+     .project-card:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+     }
+
+     .project-card img {
+         width: 100%;
+         height: 200px;
+         object-fit: cover;
+         border-top-left-radius: 8px;
+         border-top-right-radius: 8px;
+     }
+
+     .project-content {
+         padding: 20px;
+     }
+
+     .project-content h3 {
+         font-size: 1.5em;
+         color: var(--heading-color);
+         margin-bottom: 10px;
+     }
+
+     .project-content p {
+         font-size: 1em;
+         color: var(--text-color);
+         margin-bottom: 15px;
+     }
+
+     .project-links a {
+         color: var(--accent-color);
+         text-decoration: none;
+         margin-right: 15px;
+         font-weight: 600;
+     }
+
+     .project-links a:hover {
+         text-decoration: underline;
+     }
+
+     /*
+        * Contact Section Specific Styles
+        */
+     .contact-content {
+         max-width: 600px;
+         margin: 0 auto;
+         text-align: center;
+     }
+
+     .contact-content p {
+         font-size: 1.1em;
+         margin-bottom: 30px;
+     }
+
+     .contact-form label {
+         display: block;
+         margin-bottom: 8px;
+         font-weight: 600;
+         text-align: left;
+     }
+
+     .contact-form input[type="text"],
+     .contact-form input[type="email"],
+     .contact-form textarea {
+         width: 100%;
+         padding: 12px;
+         margin-bottom: 20px;
+         border: 1px solid var(--border-color);
+         border-radius: 5px;
+         font-family: 'Inter', sans-serif;
+         font-size: 1em;
+         color: var(--text-color);
+         background-color: var(--primary-bg);
+         box-shadow: inset 0 1px 3px var(--shadow-light);
+     }
+
+     .contact-form textarea {
+         resize: vertical;
+         min-height: 120px;
+     }
+
+     .contact-form input[type="submit"] {
+         width: auto;
+         cursor: pointer;
+         border: none;
+         border-radius: 5px;
+         padding: 12px 30px;
+         font-weight: 600;
+         background-color: var(--accent-color);
+         color: var(--secondary-bg);
+         transition: background-color 0.3s ease, transform 0.2s ease;
+     }
+
+     .contact-form input[type="submit"]:hover {
+         background-color: #2980b9;
+         transform: translateY(-3px);
+     }
+
+     .social-links {
+         margin-top: 30px;
+     }
+
+     .social-links a {
+         display: inline-block;
+         margin: 0 15px;
+         color: var(--heading-color);
+         font-size: 2.2em;
+         transition: color 0.3s ease;
+     }
+
+     .social-links a:hover {
+         color: var(--accent-color);
+
+     }
+
+
+     /*
+        * Footer Styling
+        */
+     footer {
+         text-align: center;
+         padding: 30px 20px;
+         background-color: var(--heading-color);
+         color: var(--primary-bg);
+         font-size: 0.9em;
+         border-top-left-radius: 8px;
+         border-top-right-radius: 8px;
+     }
+
+     footer p {
+         margin-bottom: 5px;
+     }
+
+     footer a {
+         color: var(--accent-color);
+         text-decoration: none;
+     }
+
+     footer a:hover {
+         text-decoration: underline;
+     }
+
+
+     /*
+        * Responsive Design (Media Queries)
+        * Adjusts layout and styling for different screen sizes.
+        */
+     @media (max-width: 768px) {
+         .hero h1 {
+             font-size: 2.5em;
+         }
+
+         .hero p {
+             font-size: 1em;
+         }
+
+         h2 {
+             font-size: 2em;
+         }
+
+         .nav-links {
+             display: none;
+             flex-direction: column;
+             width: 100%;
+             background-color: var(--secondary-bg);
+             position: absolute;
+             top: 70px;
+             left: 0;
+             box-shadow: 0 4px 8px var(--shadow-light);
+             border-bottom-left-radius: 8px;
+             border-bottom-right-radius: 8px;
+         }
+
+         .nav-links.active {
+             display: flex;
+         }
+
+         .nav-links li {
+             margin: 0;
+             text-align: center;
+             padding: 15px 0;
+             border-bottom: 1px solid var(--border-color);
+         }
+
+         .nav-links li:last-child {
+             border-bottom: none;
+         }
+
+         .nav-links a {
+             display: block;
+             width: 100%;
+         }
+
+         .menu-toggle {
+             display: flex;
+         }
+
+         .about-content {
+             flex-direction: column;
+             text-align: center;
+         }
+
+         .skills-grid,
+         .projects-grid {
+             grid-template-columns: 1fr;
+         }
+
+         .contact-form {
+             padding: 0 10px;
+         }
+     }
